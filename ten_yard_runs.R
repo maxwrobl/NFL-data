@@ -2,6 +2,7 @@ library(dplyr)
 library(ggplot2)
 library(nflfastR)
 library(ggimage)
+library(extrafont)
 
 season=2017
 
