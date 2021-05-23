@@ -53,7 +53,7 @@ ggplot(df,aes(x=game,y=-line))+
   geom_image(aes(image=team_logo_wikipedia.x),size=0.04,asp=17/10)+
   scale_x_continuous(labels=df$week,breaks=1:17)+
   scale_y_continuous(breaks=seq(-15,15,5),labels=c("+15","+10","+5","0","-5","-10","-15"))+
-  geom_image(aes(image=team_logo_wikipedia.y,y=min(away_dots$line,home_dots$line)-2),size=0.045,asp=17/10)+
+  geom_image(aes(image=team_logo_wikipedia.y,y=min(-max(line),away_dots$line,home_dots$line)-2),size=0.045,asp=17/10)+
   geom_point(data=home_avg,aes(x=game,y=line),pch=18,size=4,color="black")+
   geom_point(data=away_avg,aes(x=game,y=line),pch=18,size=4,color="black")+
   labs(x="Week/Opponent",y="Point Spread",title=mytitle,
