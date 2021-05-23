@@ -47,7 +47,7 @@ away_dots<-merge(away_dots,df[,c(8,19)],by="away_team")
 mytitle <- paste0("2021 Season Point Spreads for the ",df[1,2])
 
 ggplot(df,aes(x=game,y=-line))+
-  geom_hline(yintercept = 0)+
+  geom_hline(yintercept = 0, linetype="dashed")+
   geom_point(data=home_dots,aes(x=game,y=line),size=3,alpha=0.2,color="red")+
   geom_point(data=away_dots,aes(x=game,y=line),size=3,alpha=0.2,color="blue")+
   geom_image(aes(image=team_logo_wikipedia.x),size=0.04,asp=17/10)+
